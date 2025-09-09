@@ -265,7 +265,10 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-    <None Update="Config.js.example">
+      <None Update="Config.js.example">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    <None Update="Config.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="log4net.config.docker">
