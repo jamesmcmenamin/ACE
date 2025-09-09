@@ -361,7 +361,7 @@ namespace ACE.Server.Factories
                 starterArea.Locations[0].Frame.Origin.X, starterArea.Locations[0].Frame.Origin.Y, starterArea.Locations[0].Frame.Origin.Z,
                 starterArea.Locations[0].Frame.Orientation.X, starterArea.Locations[0].Frame.Orientation.Y, starterArea.Locations[0].Frame.Orientation.Z, starterArea.Locations[0].Frame.Orientation.W);
 
-            var instantiation = new Position(0xA9B40019, 84, 7.1f, 94, 0, 0, -0.0784591f, 0.996917f); // ultimate fallback.
+            var instantiation = new Position(0xA9B40019, 84.000000f, 7.100000f, 94.005005f, 0.991750f, 0.000000f, 0.000000f, -0.128186f); // ultimate fallback.
             var spellFreeRide = new Database.Models.World.Spell();
             switch (starterArea.Name)
             {

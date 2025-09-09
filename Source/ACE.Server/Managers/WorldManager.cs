@@ -210,7 +210,7 @@ namespace ACE.Server.Managers
                 if (session.Player.Instantiation != null)
                     session.Player.Location = new Position(session.Player.Instantiation);
                 else
-                    session.Player.Location = new Position(0xA9B40019, 84, 7.1f, 94, 0, 0, -0.0784591f, 0.996917f);  // ultimate fallback
+                    session.Player.Location = new Position(0xA9B40019, 84.000000f, 7.100000f, 94.005005f, 0.991750f, 0.000000f, 0.000000f, -0.128186f);  // ultimate fallback
             }
 
             var olthoiPlayerReturnedToLifestone = session.Player.IsOlthoiPlayer && character.TotalLogins >= 1 && session.Player.LoginAtLifestone;
@@ -223,7 +223,7 @@ namespace ACE.Server.Managers
             if (!success)
             {
                 // send to lifestone, or fallback location
-                var fixLoc = session.Player.Sanctuary ?? new Position(0xA9B40019, 84, 7.1f, 94, 0, 0, -0.0784591f, 0.996917f);
+                var fixLoc = session.Player.Sanctuary ?? new Position(0xA9B40019, 84.000000f, 7.100000f, 94.005005f, 0.991750f, 0.000000f, 0.000000f, -0.128186f);
 
                 log.Error($"WorldManager.DoPlayerEnterWorld: failed to spawn {session.Player.Name}, relocating to {fixLoc.ToLOCString()}");
 
@@ -274,7 +274,7 @@ namespace ACE.Server.Managers
             if (olthoiPlayerReturnedToLifestone)
                 session.Network.EnqueueSend(new GameMessageSystemChat("You have returned to the Olthoi Queen to serve the hive.", ChatMessageType.Broadcast));
             else if (playerLoggedInOnNoLogLandblock) // see http://acpedia.org/wiki/Mount_Elyrii_Hive
-                session.Network.EnqueueSend(new GameMessageSystemChat("The currents of portal space cannot return you from whence you came. Your previous location forbids login.", ChatMessageType.Broadcast));            
+                session.Network.EnqueueSend(new GameMessageSystemChat("The currents of portal space cannot return you from whence you came. Your previous location forbids login.", ChatMessageType.Broadcast));
         }
 
         private static string AppendLines(params string[] lines)
