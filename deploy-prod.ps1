@@ -82,7 +82,9 @@ $gitStatus = git status --porcelain | Where-Object {
     $_ -notlike "*db-data-*" -and
     $_ -notlike "*Backups/*" -and
     $_ -notlike "*ace_*.sql" -and
-    $_ -notlike "*backup*.sql"
+    $_ -notlike "*backup*.sql" -and
+    $_ -notlike "*prod-initial-setup.sql" -and
+    $_ -notlike "*.sql"
 }
 if ($gitStatus -and !$Emergency) {
     Write-Host "SOURCE CODE changes detected (data/log files ignored):" -ForegroundColor Red
